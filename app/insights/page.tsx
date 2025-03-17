@@ -4,8 +4,8 @@ import { useState } from "react";
 
 export default function Insights() {
     const [tasks, setTasks] = useState("");
-    const [plan, setPlan] = useState(null);
-    const [error, setError] = useState(null);
+    const [plan, setPlan] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async () => {
@@ -21,7 +21,7 @@ export default function Insights() {
             const data = await response.json();
             setPlan(data.plan);
         } catch (err) {
-            
+            setError("Failed to fetch analysis. Please try again.");
         } finally {
             setIsLoading(false);
         }
