@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState } from "react"; // eslint-disable-line no-unused-vars
 
 export default function Insights() {
-    const [tasks, setTasks] = useState("");
+    const [tasks, setTasks] = useState<string>("");
     const [plan, setPlan] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async () => {
         setIsLoading(true);
